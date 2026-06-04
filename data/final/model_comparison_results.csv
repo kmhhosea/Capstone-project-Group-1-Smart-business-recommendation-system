@@ -1,0 +1,6 @@
+algorithm,accuracy,f1_score
+Gradient Boosting,0.933,0.9329428977272728
+Random Forest,0.9205,0.9204671378618454
+KNN,0.897,0.897
+Decision Tree,0.883,0.8830993756161684
+Logistic Regression,0.8625,0.8624597600641964
