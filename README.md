@@ -15,7 +15,7 @@ The project helps explain how data science can support small business decision-m
 - It uses beginner-friendly tools learned in data science and AI coursework.
 - It demonstrates why data cleaning, EDA, model evaluation, and responsible interpretation matter.
 - It uses Gradio as a simple Python library for quickly building a web interface.
-- It includes OpenAI LLM interpretation to make model outputs easier for non-technical users.
+- It includes LLM interpretation to make model outputs easier for non-technical users.
 
 ## Folder Structure
 
@@ -35,9 +35,7 @@ CAPSTONE-PROJECT/
   notebooks/
     01_data_preparation_stage_1_to_6.ipynb
     02_ml_training_evaluation_gradio_stage_7_to_13.ipynb
-  presentation/
-    Smart_Business_Recommender_Capstone_Final.pptx
-  .env                 # local only, not committed
+    
   .gitignore
   README.md
 ```
@@ -71,16 +69,7 @@ It outputs:
 - Pie chart of recommendation scores
 - LLM business advice based on the user's age
 
-## API Key
 
-Create a `.env` file in the project root:
-
-```text
-OPENAI_API_KEY=your_api_key_here
-OPENAI_MODEL=gpt-4o-mini
-```
-
-Do not commit `.env` to GitHub.
 
 ## How To Run
 
@@ -88,6 +77,4 @@ Do not commit `.env` to GitHub.
 2. Open `notebooks/02_ml_training_evaluation_gradio_stage_7_to_13.ipynb` and run all cells.
 3. The final cell launches the Gradio interface.
 
-## Important Note
 
-This is an educational prototype. The dataset is prototype-mapped and not guaranteed real Tanzania shop-sales behavior. The system is designed to demonstrate a complete data science and AI workflow, not to guarantee profit.

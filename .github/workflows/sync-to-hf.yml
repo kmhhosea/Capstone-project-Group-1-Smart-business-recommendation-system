@@ -1,0 +1,33 @@
+name: Sync to Hugging Face Space
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync-to-hub:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Push to Hugging Face
+        env:
+          CAPSTONE_PROJECT_SSE_BOOTCAMP: ${{ secrets.CAPSTONE_PROJECT_SSE_BOOTCAMP }}
+        run: |
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "GitHub Actions"
+
+          git clone https://Kelvinhosea:${CAPSTONE_PROJECT_SSE_BOOTCAMP}@huggingface.co/spaces/Kelvinhosea/Capstone_Project_-_SSE_bootcamp hf-space
+
+          rsync -av --delete \
+            --exclude ".git" \
+            --exclude ".github" \
+            ./ hf-space/
+
+          cd hf-space
+          git add .
+          git commit -m "Sync from GitHub" || echo "No changes"
+          git push
